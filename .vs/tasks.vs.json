@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "タスク-Settings",
+      "appliesTo": "AddForm/Properties/Settings.settings",
+      "type": "launch"
+    }
+  ]
+}

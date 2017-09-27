@@ -35,8 +35,9 @@ namespace AddForm.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\CSharp\\Projects\\AddForm\\Ad" +
-            "dDebug.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Tetsutaro Yamada\\so" +
+            "urce\\repos\\CSPracticeHitome\\AddDebug.mdf\";Integrated Security=True;Connect Timeo" +
+            "ut=30")]
         public string DebugConnectionString {
             get {
                 return ((string)(this["DebugConnectionString"]));
@@ -46,8 +47,9 @@ namespace AddForm.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\CSharp\\Projects\\AddForm\\Ad" +
-            "d.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Tetsutaro Yamada\\so" +
+            "urce\\repos\\CSPracticeHitome\\Add.mdf\";Integrated Security=True;Connect Timeout=30" +
+            "")]
         public string ReleaseConnectionString {
             get {
                 return ((string)(this["ReleaseConnectionString"]));

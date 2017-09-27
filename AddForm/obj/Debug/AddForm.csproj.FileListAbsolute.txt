@@ -15,3 +15,20 @@ C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\EntityFramework.SqlServer.x
 C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.dll
 C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.pdb
 C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.dll.config
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddForm.exe.config
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddForm.exe
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddForm.pdb
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddClassLibrary.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\EntityFramework.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddClassLibrary.pdb
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\AddClassLibrary.dll.config
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\EntityFramework.xml
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.csprojResolveAssemblyReference.cache
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.MainWindow.resources
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.Properties.Resources.resources
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.csproj.GenerateResource.Cache
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.csproj.CoreCompileInputs.cache
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.exe
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddForm\obj\Debug\AddForm.pdb

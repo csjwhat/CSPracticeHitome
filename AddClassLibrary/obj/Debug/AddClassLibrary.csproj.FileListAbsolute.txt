@@ -9,3 +9,14 @@ C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.csp
 C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.csproj.CoreCompileInputs.cache
 C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.dll
 C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.pdb
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\AddClassLibrary.dll.config
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\AddClassLibrary.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\AddClassLibrary.pdb
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\obj\Debug\AddClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\obj\Debug\AddClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\obj\Debug\AddClassLibrary.dll
+C:\Users\Tetsutaro Yamada\source\repos\CSPracticeHitome\AddClassLibrary\obj\Debug\AddClassLibrary.pdb
