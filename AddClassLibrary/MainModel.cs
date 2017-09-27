@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace AddClassLibrary
 {
+    /// <summary>
+    /// データベースアクセス用のAPIを提供する。
+    /// このサンプルは、DB接続のオープン・クローズもこのクラスで実施
+    /// ※ Spring JavaだとDaoに近いイメージのクラス。
+    /// </summary>
     internal static class MainModel
     {
+        /// <summary>
+        /// 検索条件に従い、Customerテーブルから情報を部分一致検索する。
+        /// </summary>
+        /// <param name="keyword">キーワード（検索条件）</param>
+        /// <returns>IEnumerable：Customer</returns>
         public static IEnumerable<Customer> GetItems(string keyword)
         {
-            //return new List<Customer>();
-
             // 接続をオープンする。接続したDBについての情報はAddDbContext dbにセットする
             using (AddDbContext db = new AddDbContext())
             {
@@ -30,26 +38,34 @@ namespace AddClassLibrary
             }
         }
 
+        /// <summary>
+        /// 引数に従ってCustomerを登録する。
+        /// </summary>
+        /// <param name="model">登録情報を格納したCustomer</param>
+        /// <returns>登録済みのCustomer</returns>
         public static Customer AddItem(Customer model)
         {
-            //return new Customer();
-
             // 接続をオープンする。
             using (AddDbContext db = new AddDbContext())
             {
                 // modelに設定された内容をCustomerに追加する。
                 db.Customers.Add(model);
 
-                // Addの場合は、登録の瞬間のみ楽観排他がかかっていればOK。
+                // Addの場合は、登録の瞬間のみ楽観排他がかかる。
                 // SaveChange()メソッドがレコード行バージョンを使って、
-                //自動的に楽観排他をかけてくれる。
+                // 自動的に楽観排他をかけてくれる。
                 // レコード行バージョンは、DBContext作成時の行バージョンを保持しておいて、
-                //SaveChange時の行バージョンと比べてくれる。
+                // SaveChange時の行バージョンと比べてくれる。
                 db.SaveChanges();
                 return model;
             }
         }
 
+        /// <summary>
+        /// 引数に従ってCustomerをアップデートする。
+        /// </summary>
+        /// <param name="model">変更情報を格納したCustomer</param>
+        /// <returns>変更情報を格納したCustomer</returns>
         public static Customer UpdateItem(Customer model)
         {
             //return new Customer();
@@ -75,10 +91,13 @@ namespace AddClassLibrary
             }
         }
 
+        /// <summary>
+        /// 引数のCustomerからIDを取得して、該当するデータをCustomersから削除する。
+        /// </summary>
+        /// <param name="model">Customer Customerのオブジェクト</param>
+        /// <returns></returns>
         public static Customer DeleteItem(Customer model)
         {
-            //return new Customer();
-
             // 接続をオープンする。
             using (AddDbContext db = new AddDbContext())
             {
@@ -92,6 +111,14 @@ namespace AddClassLibrary
             }
         }
 
+        /// <summary>
+        /// CustomersテーブルからCustomerに設定されたIDのデータのうち最初の１件を取得する。
+        /// データがなければエラー。存在する場合、Customerに設定されたタイムスタンプと
+        /// テーブルのタイムスタンプが異なる場合エラー。
+        /// </summary>
+        /// <param name="db">AddDbContext DB接続情報</param>
+        /// <param name="model">Customer Customerのオブジェクト</param>
+        /// <returns></returns>
         private static Customer GetFirstRecord(AddDbContext db, Customer model)
         {
             // SQLを構築する

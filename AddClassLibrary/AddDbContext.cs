@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace AddClassLibrary
 {
+    /// <summary>
+    /// DB接続の環境設定プロパティを用意する。
+    /// 
+    /// 当クラスのメンバ変数 Customersが、
+    /// データベースのCustomersテーブルにアクセスするオブジェクトとして、
+    /// MainModelの各メソッドから呼ばれる。
+    /// </summary>
     internal class AddDbContext : DbContext
     {
         public static string DebugConnectionString { get; set; }

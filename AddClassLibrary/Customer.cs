@@ -7,6 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AddClassLibrary
 {
+    /// <summary>
+    /// このクラスは、データベースに登録するときのデータモデルを提供する。
+    /// コードファーストの考え方にしたがい、このファイルの通りにデータファイルができる。
+    /// ※ Spring JavaだとEntityに近いイメージのクラス。
+    /// 
+    /// </summary>
     public class Customer
     {
         // 自動プロパティ
@@ -58,6 +64,13 @@ namespace AddClassLibrary
             return a == b;
         }
 
+        /// <summary>
+        /// Customerデータの同定。Idが一緒なら同じデータとみなす。
+        /// IDが一致する場合はtrueを返す。
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public static bool operator ==(Customer a, Customer b)
         {
             //return a?.Id == b?.Id;
@@ -70,6 +83,14 @@ namespace AddClassLibrary
             return o1.Equals(o2);
 
         }
+
+        /// <summary>
+        /// Customerデータの同定。Idが一緒なら同じデータとみなす。
+        /// IDの不一致ならtrueを返す。
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
 
         public static bool operator !=(Customer a, Customer b)
         {
