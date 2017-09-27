@@ -1,0 +1,194 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AddClassLibrary
+{
+    public class CustomerViewModel : ModelBase<Customer>
+    {
+        public CustomerViewModel() { }
+
+        // 引数にCustomerをもらい、CustomerViewModel自身のプロパティにセットするコンストラクタ
+        // Nameは属性が変わらないが、PostCodeはCustomerがintに対してCustomerViewModelはStringのため
+        // 型変換をかける。
+        public CustomerViewModel(Customer model)
+        {
+            SetProperties(model);
+        }
+
+        //CustomerViewModelを受け取り、自身のプロパティにセットするコンストラクタ
+        public void SetProperties(CustomerViewModel source)
+        {
+            if (source == null) return;
+		
+		// テキストテンプレートによる代入の作成
+<# foreach (Data x in _data) #>
+<# { #>
+            <#= x.Name #> = source.<#= x.Name #>;
+<# } #>
+			PostCode = source.PostCode;
+
+			// Template使用前のコード
+            // Name = source.Name;
+            
+        }
+
+
+        public void SetProperties(Customer source)
+        {
+            if (source == null) return;
+
+			// テキストテンプレートによる代入の作成
+<# foreach (Data x in _data) #>
+<# { #>
+            <#= x.Name #> = source.<#= x.Name #>;
+<# } #>
+            PostCode = source.PostCode.ToString();
+
+			// Template使用前のコード
+            // Name = source.Name;
+
+        }
+
+        // メソッド：Customerをメンバ変数 _modelにセットするプロパティ
+        //_modelはスーパークラスに定義されている
+        public Customer Customer => _model;
+
+		// テキストテンプレートによるメンバ変数とプロパティの作成
+<# foreach (Data x in _data) #>
+<# { #>
+		// メンバ変数：名称を格納するためのメンバ変数_<#= x.Name #>の定義
+		private <#= x.Type #> _<#= x.Name #>;
+
+		// プロパティ：_<#= x.Name #>をハンドリングするためのプロパティ<#= x.Name #>の定義
+		public <#= x.Type #> <#= x.Name #>
+		{
+            get { return _<#= x.Name #>; }
+            set
+            {
+                // プロパティの引数を_Nameにセットする
+                if (_<#= x.Name #> == value) return;
+                _<#= x.Name #> = value;
+
+                // ValueをValidationValueメソッドを用いて入力チェックし、
+                // 問題がなければスーパークラスの_modelのNameプロパティに引数をセットする。
+                if (ValidationValue(nameof(<#= x.Name #>), value))
+                {
+                    _model.<#= x.Name #> = value;
+                }
+
+                // <#= x.Name #>とErrorに変化があったことをスーパークラスのOnPropertyChengeに伝える
+                OnPropertyChanged(nameof(<#= x.Name #>));
+                OnPropertyChanged(nameof(Error));
+            }
+        }
+
+<# } #>
+
+        //  // メンバ変数：名称を格納するためのメンバ変数_Nameの定義
+        // public string _Name;
+
+        // プロパティ：_NameをハンドリングするためのプロパティNameの定義
+        // CustomerViewModelではデータをプロパティ自体ではなく、
+        // メンバー変数に保持しています。
+        // public string Name
+        // {
+        //    get { return _Name; }
+        //    set
+        //    {
+        //        // プロパティの引数を_Nameにセットする
+        //        if (_Name == value) return;
+        //        _Name = value;
+		//
+        //        // スーパークラスの_modelにはすでにCustomerがセットされている。
+        //        // スーパークラスのValidationValueメソッドを用いて入力チェックし、
+        //        // 問題がなければスーパークラスの_modelのNameプロパティに引数をセットする。
+        //        if (ValidationValue(nameof(Name), _model.Name))
+        //        {
+        //            _model.Name = value;
+        //        }
+
+        //        // NameとErrorに変化があったことをスーパークラスのOnPropertyChengeに伝える
+        //        OnPropertyChanged(nameof(Name));
+        //        OnPropertyChanged(nameof(Error));
+        //    }
+        //}
+
+        // メンバ変数：郵便番号を格納するためのメンバ変数_PostCodeの定義
+        public string _postCode;
+
+        // プロパティ：_PostCodeをハンドリングするためのプロパティPostCodeの定義
+        public string PostCode
+        {
+            get { return _postCode; }
+            set
+            {
+                if (_postCode == value) return;
+                _postCode = value;
+
+                int i = 0;
+
+                // プロパティ：郵便番号の場合、Customerでは郵便番号を数値で持っていますが、
+                // CustomerViewModelでは画面入力値と連携させるためにstringで持っています。
+                // intに変換できないときのエラーも追加します。
+                if (!int.TryParse(value, out i))
+                {
+                    UpdateErors(
+                        nameof(PostCode),
+                        "数値以外の文字が入力されているか、桁数がオーバーしています");
+                }
+                else
+                {
+                    if (ValidationValue(nameof(PostCode), i))
+                    {
+                        // スーパークラスのValidationValueメソッドを用いて入力チェックし、問題がなければ
+                        // スーパークラスの_modelのPostCodeプロパティに引数をintに変換した値をセットする。
+                        _model.PostCode = i;
+                    }
+                }
+                OnPropertyChanged(PostCode);
+                OnPropertyChanged(Error);
+            }
+        }
+
+        public override string Error
+        {
+            get
+            {
+                if (_errors.Count > 0) return "不正な値が入力されています";
+                if (!string.IsNullOrWhiteSpace(_model.Address) && _model.PostCode == 0)
+                {
+                    return "住所に準じた郵便番号が入力されていません";
+                }
+                return null;
+            }
+        }
+    }
+}
+
+<#+
+    class Data
+    {
+	    public string Name { get; set;}
+	    public string Type { get; set; }
+	}
+
+	private static List<Data> _data = new List<Data>
+	{
+		new Data { Name = "Id"         , Type = "int"},
+		new Data { Name = "Name"       , Type = "string"},
+		new Data { Name = "Kana"       , Type = "string"},
+		new Data { Name = "Address"    , Type = "string"},
+		new Data { Name = "TelNumber"  , Type = "string"},
+		new Data { Name = "Memo"       , Type = "string"},
+		new Data { Name = "TimeStamp"  , Type = "byte[]"}
+	};
+#>

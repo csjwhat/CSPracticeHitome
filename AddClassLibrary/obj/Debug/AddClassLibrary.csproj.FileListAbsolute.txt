@@ -1,0 +1,11 @@
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\AddClassLibrary.dll.config
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\AddClassLibrary.dll
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\AddClassLibrary.pdb
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\EntityFramework.dll
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\EntityFramework.xml
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.csprojResolveAssemblyReference.cache
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.csproj.CoreCompileInputs.cache
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.dll
+C:\CSharp\Projects\AddForm\AddForm\AddClassLibrary\obj\Debug\AddClassLibrary.pdb

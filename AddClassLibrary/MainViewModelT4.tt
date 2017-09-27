@@ -1,0 +1,61 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AddClassLibrary;
+using System.Windows.Input;
+
+namespace AddClassLibrary
+{
+    partial class MainViewModel
+    {
+<# foreach(Command x in _commands) #>
+<# { #>
+<#      string n = x.Name + "Command"; #>
+        private ICommand _<#= n #>;
+        public ICommand <#= n #>
+        {
+            get
+            {
+                if (_<#= n #> == null)
+                {
+                    // イベントハンドラを登録する。自分自身と、<#= n #>、エラー有無を渡す。
+                    _<#= n #> = new DelegateCommand(this, Execute<#= n #><#= x.UseCanExecute ?", CanExecute" + n :""#>);
+                }
+                return _<#= n #>;
+            }
+        }
+
+<# } #>
+
+//        private bool CanExecuteUpdateCommand() => !HasErrors;
+//        private void ExecuteUpdateCommand() { }
+      }
+}
+
+
+<#+
+	class Command
+	{
+		public string Name { get; set; }
+		public bool UseCanExecute { get; set; }
+	}
+
+	private static List<Command> _commands = new List<Command>
+	{
+		new Command { Name = "Clear"   , UseCanExecute = false },
+		new Command { Name = "Search"  , UseCanExecute = false },
+		new Command { Name = "Update"  , UseCanExecute = true  },
+		new Command { Name = "Delete"   , UseCanExecute = true  },
+		new Command { Name = "About"   , UseCanExecute = false },
+		new Command { Name = "Help"    , UseCanExecute = false }
+	};
+#>

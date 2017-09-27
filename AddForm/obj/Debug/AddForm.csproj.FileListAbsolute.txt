@@ -1,0 +1,17 @@
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddForm.exe.config
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddForm.exe
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddForm.pdb
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.csprojResolveAssemblyReference.cache
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.Properties.Resources.resources
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.csproj.GenerateResource.Cache
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.csproj.CoreCompileInputs.cache
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.exe
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.pdb
+C:\CSharp\Projects\AddForm\AddForm\AddForm\obj\Debug\AddForm.MainWindow.resources
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\EntityFramework.dll
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\EntityFramework.xml
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.dll
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.pdb
+C:\CSharp\Projects\AddForm\AddForm\AddForm\bin\Debug\AddClassLibrary.dll.config
