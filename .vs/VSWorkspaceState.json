@@ -3,11 +3,7 @@
     "",
     "\\AddClassLibrary",
     "\\AddClassLibrary\\Properties",
-    "\\AddForm",
-    "\\packages\\EntityFramework.6.1.3",
-    "\\packages\\EntityFramework.6.1.3\\content",
-    "\\packages\\EntityFramework.6.1.3\\lib",
-    "\\packages\\EntityFramework.6.1.3\\lib\\net40"
+    "\\AddForm"
   ],
   "SelectedNode": "\\packages",
   "PreviewInSolutionExplorer": false
