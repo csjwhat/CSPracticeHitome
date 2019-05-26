@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="ひと目でわかる顧客情報" Height="600" Width="800" MinHeight="600" MinWidth="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Margin" Value="2,2,30,2"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
         
+        <!-- キーワード検索とクリア-->
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+            <TextBox Width="150"/>
+            <Button Width="55" Content="検索"/>
+            <Button Width="55" Content="クリア"/>
+        </StackPanel>
+        
+        <!-- 名前リスト -->
+        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="7"/>
+
+        <!-- データ編集 -->
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="名前"/>
+        <TextBox Grid.Column="2" Grid.Row="0"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="カナ"/>
+        <TextBox Grid.Column="2" Grid.Row="1"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="郵便番号"/>
+        <TextBox Grid.Column="2" Grid.Row="2"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="住所"/>
+        <TextBox Grid.Column="2" Grid.Row="3"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="電話番号"/>
+        <TextBox Grid.Column="2" Grid.Row="4"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="メモ"/>
+        <TextBox
+            Grid.Column="2"
+            Grid.Row="5"
+            VerticalContentAlignment="Top"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto"
+            AcceptsReturn="True"
+            />
+
+        <TextBlock Grid.Column="2" Grid.Row="6" Text="エラーメッセージ" Foreground="Red"/>
+
+        <!-- コマンドボタン-->
+        <Grid Grid.Column="2" Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="更新"/>
+            <Button Grid.Column="1" Content="削除"/>
+            <Button Grid.Column="3" Content="バージョン"/>
+            <Button Grid.Column="4" Content="ヘルプ"/>
+
+            <Button  Grid.Column="5" x:Name="button" Content="閉じる" Click="closeButton_Click"/>
+        </Grid>
     </Grid>
 </Window>
