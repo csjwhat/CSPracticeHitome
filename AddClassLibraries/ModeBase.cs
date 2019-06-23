@@ -14,7 +14,11 @@ namespace AddClassLibraries
     // データ型の別名定義。シノニムのようなもの。 Errorsクラス＝Directoryクラスになる。
     using Errors = Dictionary<string, string>;
 
-    public class ModeBase
+    // インターフェースについて。インターフェースは多重継承できる。
+    // インターフェースを継承すると、インターフェースの規格に定義されたメンバーの条件を満たす必要がある。
+    // INotifyPropertyChanged → プロパティが変更されたことをクライアントに通知する　→ メンバー変数に PropertyChangedEventHandlerを持つ
+    //IDataErrorInfo → UIにバインドできるカスタムエラー情報を提供する機能。→ インデクサ（項目名）とErrorプロパティの定義
+    public abstract class ModeBase : INotifyPropertyChanged, IDataErrorInfo
     {
         // PropertyChangedはデリゲード。PropertyChangedEventHandlerメソッドへの参照を代入している。
         // イベントに関するデリゲードは、Staticメソッドのイメージ。修飾子をeventに。クラスは指定しない。
@@ -47,6 +51,12 @@ namespace AddClassLibraries
                     _errors.ContainsKey(propertyName) ? _errors[propertyName] : null;
             }
         }
+        
+        // Error → 
+        // 継承されることを前提にしたプロパティ（抽象メソッド）
+        // 記述の方法が自動プロパティと似ているが、abstractをつけると、抽象プロパティと認識される。→ 実装でgetメソッドの記述が必要になる。
+        // 抽象メンバーには宣言だけで実装が存在しない。→ オーバーライドするのが前提のため。
+        abstract public string Error { get; }
 
         /// <summary>
         ///  プロパティエラーメッセージを更新します。

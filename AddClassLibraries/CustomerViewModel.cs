@@ -8,5 +8,15 @@ namespace AddClassLibraries
 {
     public class CustomerViewModel : ModeBase
     {
+        public override string Error
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+
+
     }
 }
